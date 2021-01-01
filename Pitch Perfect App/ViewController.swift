@@ -16,13 +16,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     
     var audioRecorder: AVAudioRecorder!
     let stopRecordingSegue = "stopRecording"
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+    
+    
     @IBAction func recordAudio(_ sender: Any) {
         print("OnRecord click")
         configureUI(isRecording: true)
@@ -50,30 +45,30 @@ class ViewController: UIViewController, AVAudioRecorderDelegate{
     }
     
     func configureUI(isRecording: Bool) {
-            stopRecordButton.isEnabled = isRecording
-            recordButton.isEnabled = !isRecording
-            recordingLabel.text = !isRecording ? "Tap to Record" : "Recording in Progress"
-
-        }
+        stopRecordButton.isEnabled = isRecording
+        recordButton.isEnabled = !isRecording
+        recordingLabel.text = !isRecording ? "Tap to Record" : "Recording in Progress"
+        
+    }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
             
-        
-        performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+            
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         }else {
             print("Falhou")
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
+        
         if segue.identifier == stopRecordingSegue {
             let playSoundsVC = segue.destination as! PlaySoundsViewController
             let recordedAudio = sender as! URL
             playSoundsVC.recordedAudioURL = recordedAudio
         }
     }
-
+    
 }
 

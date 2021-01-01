@@ -74,15 +74,15 @@ class PlaySoundsViewController: UIViewController {
     
     func setupButtons(){
 
-        snailButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        chipmunkButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        rabbitButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        vaderButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        echoButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        reverbButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.imageView?.contentMode = .scaleAspectFit
         
         
-        stopButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        stopButton.imageView?.contentMode = .scaleAspectFit
     }
 
 }
